@@ -325,10 +325,10 @@ margin-left:0px; overflow:hidden; width:100%; height:5em;
              </div>
                 <div id="detail-wrap2" class="col m12 l10 center " style="padding:2em 4em; z-index: 0; background-color: white; border: hidden; border-radius: 20px;"> 
                     <div class="collection" id="car-type-wrap" style="border:none;">
-                        <a id="1" class="collection-item">SUV</a>
-                        <a id="2" class="collection-item">Small</a>
-                        <a id="3" class="collection-item">Medium</a>
-                        <a id="4" class="collection-item">Large</a>
+                        <a id="0" class="collection-item">SUV</a>
+                        <a id="1" class="collection-item">Sedan</a>
+                        <a id="2" class="collection-item">Hatchback</a>
+                        <a id="3" class="collection-item">LUV</a>
                     </div>
                 
                 </div>   

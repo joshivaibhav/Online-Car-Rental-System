@@ -29,11 +29,11 @@ namespace WebApplication1
             SqlCommand cmd = new SqlCommand();
 
             SqlParameter parameter = new SqlParameter();
-            parameter.ParameterName = "@cartype";
+            parameter.ParameterName = "@type";
             parameter.Value = CarType;
             
             cmd.Connection = con;
-            cmd.CommandText = "select model,make from car_master where car_type = @cartype and available='Y' and city=(select city from USER_MASTER where user_id=@user_id) group by model,make ";
+            cmd.CommandText = "select model,make from car_master where type = @type and available='Y' and city=(select city from USER_MASTER where user_id=@user_id) group by model,make ";
             cmd.Parameters.Add(parameter);
             cmd.Parameters.AddWithValue("@user_id",userid);
             con.Open();

@@ -104,8 +104,12 @@
     <Content Include="css\style - Copy.css" />
     <Content Include="css\style.css" />
     <Content Include="design.png" />
+    <Content Include="forgotpwd.aspx" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\places.js" />
     <Content Include="login-background.jpg" />
     <Content Include="minimal-car-index.png" />
+    <Content Include="newcar.aspx" />
     <Content Include="newlogin.aspx" />
     <Content Include="pdflayout.html" />
     <Content Include="Index.aspx" />
@@ -1488,6 +1492,7 @@
     <Content Include="ionicons\scss\_ionicons-icons.scss" />
     <Content Include="ionicons\scss\_ionicons-variables.scss" />
     <Content Include="booked_detail_entry.aspx" />
+    <Content Include="ApplicationInsights.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1496,6 +1501,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="stripe_bg.jpg" />
     <Content Include="test.aspx" />
     <Content Include="toyo.jpg" />
@@ -1530,6 +1537,13 @@
       <DependentUpon>carstats.aspx</DependentUpon>
     </Compile>
     <Compile Include="Car_Obj.cs" />
+    <Compile Include="forgotpwd.aspx.cs">
+      <DependentUpon>forgotpwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpwd.aspx.designer.cs">
+      <DependentUpon>forgotpwd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1543,6 +1557,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newcar.aspx.cs">
+      <DependentUpon>newcar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newcar.aspx.designer.cs">
+      <DependentUpon>newcar.aspx</DependentUpon>
     </Compile>
     <Compile Include="newlogin.aspx.cs">
       <DependentUpon>newlogin.aspx</DependentUpon>

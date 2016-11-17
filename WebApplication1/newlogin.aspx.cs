@@ -24,7 +24,7 @@ namespace WebApplication1
 
         protected void button1_click(object sender, EventArgs e)
         {
-               string connstring = WebConfigurationManager.ConnectionStrings["Database2ConnectionString"].ConnectionString;
+               string connstring = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                SqlConnection myconn = new SqlConnection(connstring);
             
             string insertSQL = "insert into USER_MASTER (First_name,Last_name,Email,Sex,DOB,Address,City,State,Contact_no,Password,User_role)"
@@ -42,14 +42,9 @@ namespace WebApplication1
             mycomm.Parameters.AddWithValue("@Contact_no", cno.Text);
             //mycomm.Parameters.AddWithValue("@Reg_date", DateTime.Now);
             mycomm.Parameters.AddWithValue("@Password", pwd.Text);
-            if(Session["user_role"].ToString() == "2")
-            {
-                mycomm.Parameters.AddWithValue("@User_role", "3");
-            }
-            else
-            {
+            
                 mycomm.Parameters.AddWithValue("@User_role", "1");
-            }
+        
             myconn.Open();
             int added = mycomm.ExecuteNonQuery();
             if (added > 0)

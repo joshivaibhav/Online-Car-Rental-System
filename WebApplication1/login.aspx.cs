@@ -12,36 +12,49 @@ namespace WebApplication1
 {
     public partial class login : System.Web.UI.Page
     {
+        public int count = 0;
+        public string msg = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+            if (Request.QueryString["msg"] != null)
+            {
+                msg = Request.QueryString["msg"].ToString();
+            }
         }
 
-        protected void login_clicked(object sender, EventArgs e)
+
+
+        protected void b1_Click(object sender, EventArgs e)
         {
-            lb1.Text = txtusername.Text + txtpassword.Text;
+
             SqlConnection con = new SqlConnection();
             con.ConnectionString = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from user_master where user_id='" + txtusername.Text + "' and password ='" + txtpassword.Text + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            if (txtpassword.Text == "" || txtusername.Text == "")
             {
-                lb2.Text = "Login";
-                Session["user"] = txtusername.Text;
-                Response.Redirect("Index.aspx");
+                Response.Redirect("login.aspx?msg=Both Fields are Necessary!&m=Attempt" + ++count);
+            }
+            SqlCommand cmd = new SqlCommand("Select First_name,user_id from user_master where Email='" + txtusername.Text + "' and Password ='" + txtpassword.Text + "'", con);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+
+                Session["user"] = rdr["user_id"].ToString();
+                Session["username"] = rdr["First_name"].ToString();
+                Session["user_role"] = "1";
+                Response.Redirect("Index.aspx?role=" + Session["user_role"].ToString());
             }
             else
             {
-                lb2.Text = "wrong";  
+
+
+                txtusername.Text = "";
+                txtpassword.Text = "";
+                Response.Redirect("login.aspx?msg=Incorrect Credentials&m=Attempt" + ++count);
+
             }
-
-
 
         }
     }
-
-    
 }

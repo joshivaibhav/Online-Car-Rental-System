@@ -88,7 +88,7 @@ margin-bottom:1em;
  </head>
 <body style="background-image:url('stripe_bg.jpg'); background-size:100%; backgound-repeat:repeat-y;">
   
-  <nav class="white z-depth-3"  role="navigation">
+  x <nav class="white z-depth-3"  role="navigation">
     <div id="nav-wrapper" class="nav-wrapper container" style="">
       <a id="logo-container" href="Index.aspx" class="brand-logo" >Logo</a>
       <ul class="right hide-on-med-and-down" style="display:inline-block;  height:100%; font-size:2em;">

@@ -128,12 +128,12 @@ top:20vh; left:60%; right:10%;
       <div class="row">
 		<div class="input-field col s12" align="left">
           <i class="icon ion-android-alert prefix"></i>
-          <asp:TextBox ID="txtpassword" runat="server" type="tel" class="validate"></asp:TextBox>
+          <asp:TextBox ID="txtpassword" runat="server" type="tel"  TextMode="Password" class="validate"></asp:TextBox>
           <label for="txtpassword">Password</label>
         </div>
 	</div>
                <div align="center" class="row">
-               <asp:Button class="waves-effect waves-light btn " align="center" onClick="login_clicked" style="padding:0% 13%; background-color:#0f44c3; border-radius:0px; font-weight:300; font-size:1.3em;" ID="Button1" runat="server" Text="Login" />
+               <asp:Button class="waves-effect waves-light btn " align="center" onClick="b1_Click" style="padding:0% 13%; background-color:#0f44c3; border-radius:0px; font-weight:300; font-size:1.3em;" ID="Button1" runat="server" Text="Login" />
 			    </div>
                    <asp:Label runat="server" ID="lb1">Hello</asp:Label>
                <asp:Label runat="server" ID="lb2"></asp:Label>
@@ -151,12 +151,21 @@ top:20vh; left:60%; right:10%;
 
     </div>
   </div>
-
-  <!--  Scripts-->
+     <!--  Scripts-->
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
+  <script>
+        var t = '<%=msg%>';
+
+      if(t!="")
+      {
+          Materialize.toast(t,2000,'rounded');
+      }
+      
+      
+      </script> 
   
 </body>
 

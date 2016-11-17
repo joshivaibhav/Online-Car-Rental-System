@@ -3730,7 +3730,7 @@ $(document).ready(function(){
               duration: 225,
               queue: false,
               easing: 'easeInOutQuad',
-              complete: function() { $(this).css({ display: 'none'}); $(e.target).closest('.card').css('overflow', 'visible'); }
+              complete: function() { $(this).css({ display: 'none'}); }
             }
           );
         }
@@ -3739,9 +3739,7 @@ $(document).ready(function(){
           $(e.target).closest('.card').css('overflow', 'hidden');
           $(this).find('.card-reveal').css({ display: 'block'}).velocity("stop", false).velocity({translateY: '-100%'}, {duration: 300, queue: false, easing: 'easeInOutQuad'});
         }
-		
       }
-	  
     });
 
   });
